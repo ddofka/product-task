@@ -19,7 +19,7 @@ public class ProductController {
     private final ProductConverter converter;
 
     @GetMapping
-    public List<GetProductResponse> getProductList(){
+    public List<GetProductResponse> getProductList(@RequestParam(required = false) Long productID) {
         return converter.entityListToDto(productService.getAllProducts());
     }
 
